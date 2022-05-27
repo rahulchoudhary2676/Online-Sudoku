@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <p class="title">SooDoKoo</p>
+        <div class="difficulty-selector">
+            <span class="diff-text">Difficulty: </span>
+            <select class="difficulty-value" id="diff">
+                <option value="VeryEasy">Very Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+        <div class="sudoku-container">
+            <div id="result"></div>
+            <table class="sudoku">
+                <tr class="row0">
+                    <td class="square grid0" id="s00"></td>
+                    <td class="square grid0" id="s01"></td>
+                    <td class="square grid0" id="s02"></td>
+                    <td class="square grid1" id="s03"></td>
+                    <td class="square grid1" id="s04"></td>
+                    <td class="square grid1" id="s05"></td>
+                    <td class="square grid2" id="s06"></td>
+                    <td class="square grid2" id="s07"></td>
+                    <td class="square grid2" id="s08"></td>
+                </tr>
+                <tr class="row1">
+                    <td class="square grid0" id="s10"></td>
+                    <td class="square grid0" id="s11"></td>
+                    <td class="square grid0" id="s12"></td>
+                    <td class="square grid1" id="s13"></td>
+                    <td class="square grid1" id="s14"></td>
+                    <td class="square grid1" id="s15"></td>
+                    <td class="square grid2" id="s16"></td>
+                    <td class="square grid2" id="s17"></td>
+                    <td class="square grid2" id="s18"></td>
+                </tr>
+                <tr class="row2">
+                    <td class="square grid0" id="s20"></td>
+                    <td class="square grid0" id="s21"></td>
+                    <td class="square grid0" id="s22"></td>
+                    <td class="square grid1" id="s23"></td>
+                    <td class="square grid1" id="s24"></td>
+                    <td class="square grid1" id="s25"></td>
+                    <td class="square grid2" id="s26"></td>
+                    <td class="square grid2" id="s27"></td>
+                    <td class="square grid2" id="s28"></td>
+                </tr>
+                <tr class="row3">
+                    <td class="square grid3" id="s30"></td>
+                    <td class="square grid3" id="s31"></td>
+                    <td class="square grid3" id="s32"></td>
+                    <td class="square grid4" id="s33"></td>
+                    <td class="square grid4" id="s34"></td>
+                    <td class="square grid4" id="s35"></td>
+                    <td class="square grid5" id="s36"></td>
+                    <td class="square grid5" id="s37"></td>
+                    <td class="square grid5" id="s38"></td>
+                </tr>
+                <tr class="row4">
+                    <td class="square grid3" id="s40"></td>
+                    <td class="square grid3" id="s41"></td>
+                    <td class="square grid3" id="s42"></td>
+                    <td class="square grid4" id="s43"></td>
+                    <td class="square grid4" id="s44"></td>
+                    <td class="square grid4" id="s45"></td>
+                    <td class="square grid5" id="s46"></td>
+                    <td class="square grid5" id="s47"></td>
+                    <td class="square grid5" id="s48"></td>
+                </tr>
+                <tr class="row5">
+                    <td class="square grid3" id="s50"></td>
+                    <td class="square grid3" id="s51"></td>
+                    <td class="square grid3" id="s52"></td>
+                    <td class="square grid4" id="s53"></td>
+                    <td class="square grid4" id="s54"></td>
+                    <td class="square grid4" id="s55"></td>
+                    <td class="square grid5" id="s56"></td>
+                    <td class="square grid5" id="s57"></td>
+                    <td class="square grid5" id="s58"></td>
+                </tr>
+                <tr class="row6">
+                    <td class="square grid6" id="s60"></td>
+                    <td class="square grid6" id="s61"></td>
+                    <td class="square grid6" id="s62"></td>
+                    <td class="square grid7" id="s63"></td>
+                    <td class="square grid7" id="s64"></td>
+                    <td class="square grid7" id="s65"></td>
+                    <td class="square grid8" id="s66"></td>
+                    <td class="square grid8" id="s67"></td>
+                    <td class="square grid8" id="s68"></td>
+                </tr>
+                <tr class="row7">
+                    <td class="square grid6" id="s70"></td>
+                    <td class="square grid6" id="s71"></td>
+                    <td class="square grid6" id="s72"></td>
+                    <td class="square grid7" id="s73"></td>
+                    <td class="square grid7" id="s74"></td>
+                    <td class="square grid7" id="s75"></td>
+                    <td class="square grid8" id="s76"></td>
+                    <td class="square grid8" id="s77"></td>
+                    <td class="square grid8" id="s78"></td>
+                </tr>
+                <tr class="row8">
+                    <td class="square grid6" id="s80"></td>
+                    <td class="square grid6" id="s81"></td>
+                    <td class="square grid6" id="s82"></td>
+                    <td class="square grid7" id="s83"></td>
+                    <td class="square grid7" id="s84"></td>
+                    <td class="square grid7" id="s85"></td>
+                    <td class="square grid8" id="s86"></td>
+                    <td class="square grid8" id="s87"></td>
+                    <td class="square grid8" id="s88"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="btns">
+            <button id="new-game">New Game</button>
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>

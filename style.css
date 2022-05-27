@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 10px;
+    background-color: #4dccc6;
+    background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    margin: 1rem;
+    margin-top: 0rem;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgb(62, 97, 99);
+    /* line-height: 5rem; */
+}
+
+table {
+    height: 50rem;
+    width: 50rem;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.container {
+    user-select: none;
+}
+
+.square {
+    height: 5.52rem;
+    width: 5.52rem;
+    border: black solid 1px;
+    background-color: rgb(217, 234, 235);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.difficulty-selector {
+    font-size: 2rem;
+    margin: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    /* margin-top: 2rem; */
+}
+
+.difficulty-value {
+    font-size: 2rem;
+    background-color: rgb(217, 234, 235);
+}
+
+.sudoku {
+    margin: 2rem 0rem;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+td.grid1,
+td.grid3,
+td.grid5,
+td.grid7 {
+    background-color: white;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-game,
+#submit {
+    width: 50%;
+    height: 5rem;
+    outline: none;
+    border: none;
+    background-color: rgb(217, 234, 235);
+    font-size: 2rem;
+}
+
+#new-game {
+    margin-right: 1rem;
+}
+
+#submit {
+    margin-left: 1rem;
+}
+
+#new-game:hover,
+#submit:hover {
+    background-color: rgb(123, 181, 184);
+    color: white;
+}
+
+.sudoku tr td:hover {
+    background-color: rgb(123, 181, 184);
+    color: white;
+}
+
+.highlight {
+    background-color: rgb(123, 181, 184) !important;
+    color: white !important;
+}
+
+#result {
+    position: absolute;
+    width: 50rem;
+    height: 50.48rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    background-color: rgb(123, 181, 184);
+    color: white;
+    visibility: hidden;
+}
